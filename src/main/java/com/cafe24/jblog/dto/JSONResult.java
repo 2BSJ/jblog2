@@ -1,4 +1,4 @@
-package com.cafe24.mysite.dto;
+package com.cafe24.jblog.dto;
 
 public class JSONResult {
 
