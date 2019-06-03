@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="post">
+
+<insert id="insertVo" parameterType="postVo">
+		<![CDATA[
+			insert into post values(#{no},#{title},#{content},now(),#{categoryNo})
+		]]>
+</insert>
+
+<select id="getVoListByCategoryNo" resultType="postvo" parameterType="long">
+		<![CDATA[
+			select no,title,content,date_format(reg_date, '%Y-%m-%d %h:%i:%s')as regDate,category_no as categoryNo from post where category_no=#{categoryNo}
+		]]>
+</select>
+
+<select id="getVoByPostNo" resultType="postvo" parameterType="long">
+	<![CDATA[
+		select no,title,content,date_format(reg_date, '%Y-%m-%d %h:%i:%s')as regDate,category_no as categoryNo from post where no=#{postNo}
+	]]>
+
+</select>
+
+<select id="getDefaultPostNoByCategoryNo" resultType="long" parameterType="long">
+	<![CDATA[
+		select no from post where category_no=#{categoryNo} limit 0,1;
+	]]>
+</select>
+
+<delete id="deleteVo" parameterType="categoryvo">
+	<![CDATA[
+		delete from post where category_no=#{no}
+	]]>
+</delete>
+
+
+
+</mapper>
