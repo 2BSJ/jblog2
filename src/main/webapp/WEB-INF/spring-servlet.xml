@@ -43,7 +43,7 @@
 	</bean>
 	
 	<!-- 업로드경로설정 -->
-	<mvc:resources mapping="assets/images/**" location="file:/jblog-uploads/images/"/>
+	<mvc:resources mapping="assets/profile/**" location="file:/jblog-uploads/profile/"/>
 
 	
 	<!-- Interceptors -->

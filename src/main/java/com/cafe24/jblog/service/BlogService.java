@@ -24,8 +24,8 @@ import com.cafe24.jblog.vo.PostVo;
 @Service
 public class BlogService {
 
-	private static final String SAVE_PATH = "/jblog-uploads/images";
-	private static final String URL = "/images";
+	private static final String SAVE_PATH = "/jblog-uploads/profile";
+	private static final String URL = "/profile";
 	
 	@Autowired
 	private BlogDao blogDao;
